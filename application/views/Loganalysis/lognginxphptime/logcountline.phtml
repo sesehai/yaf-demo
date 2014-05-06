@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+{{include file='Loganalysis/header.phtml'}}
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          {{include file='Loganalysis/top_menu.phtml'}}
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+          <div class="well sidebar-nav">
+             {{include file='Loganalysis/left_menu.phtml'}}
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span10">
+          <div>
+            {{include file='Loganalysis/path_menu.phtml'}}
+          </div>
+          <div class="row-fluid">
+            
+            <div id="container" style="height:500px;border:1px solid #ccc;padding:10px;"></div>
+            
+                <script type="text/javascript">
+                  $(function () {
+                          $('#container').highcharts({
+                              title: {
+                                  text: '{{$result.title_text}}',
+                                  x: -20 //center
+                              },
+                              subtitle: {
+                                  text: '{{$result.subtitle_text}}',
+                                  x: -20
+                              },
+                              xAxis: {
+                                  categories: [{{$result.xAxis_categories}}]
+                              },
+                              yAxis: {
+                                  title: {
+                                      text: '{{$result.yAxis_title_text}}'
+                                  },
+                                  plotLines: [{
+                                      value: 0,
+                                      width: 1,
+                                      color: '#808080'
+                                  }]
+                              },
+                              tooltip: {
+                                  valueSuffix: '{{$result.tooltip_valueSuffix}}'
+                              },
+                              legend: {
+                                  layout: 'vertical',
+                                  align: 'right',
+                                  verticalAlign: 'middle',
+                                  borderWidth: 0
+                              },
+                              series: [{{$result.series}}]
+                          });
+                  });
+                </script>
+
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+      {{include file='Loganalysis/footer.phtml'}}
+
+    </div><!--/.fluid-container-->
+
+  </body>
+</html>

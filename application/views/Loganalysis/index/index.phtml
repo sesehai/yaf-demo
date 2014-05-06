@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+{{include file='Loganalysis/header.phtml'}}
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          {{include file='Loganalysis/top_menu.phtml'}}
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+          <div class="well sidebar-nav">
+             {{include file='Loganalysis/left_menu.phtml'}}
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span10">
+          <div>
+            {{include file='Loganalysis/path_menu.phtml'}}
+          </div>
+
+          <div class="hero-unit">
+            <h3>欢迎使用！</h3>
+            <p></p>
+            <p></p>
+          </div>
+
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+      {{include file='Loganalysis/footer.phtml'}}
+    </div><!--/.fluid-container-->
+  </body>
+</html>

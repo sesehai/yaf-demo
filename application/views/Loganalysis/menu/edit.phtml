@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+{{include file='Loganalysis/header.phtml'}}
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          {{include file='Loganalysis/top_menu.phtml'}}
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+          <div class="well sidebar-nav">
+             {{include file='Loganalysis/left_menu.phtml'}}
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span10">
+          <div>
+            {{include file='Loganalysis/path_menu.phtml'}}
+          </div>
+
+          <div class="box">
+            <div class="box-header well" >
+              <h5><i class="icon-edit"></i> 菜单</h5>
+            </div>
+            <div class="box-content">
+              <form class="form-horizontal" method="POST">
+                <div class="control-group">
+                  {{$message}}
+                </div>
+                  <div class="control-group">
+                    <label class="control-label" for="name">名称</label>
+                    <div class="controls">
+                      <input class="input-xlarge" name="name" id="name" type="text" value="{{$result.name}}">
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" >module/ctroller/action</label>
+                    <div class="controls">
+                      <div class="input-prepend">
+                        <span class="add-on">mod</span>
+                        <input id="mod" name="mod" size="16" type="text" value="{{$result.mod}}">
+                        <span class="add-on">ctl</span>
+                        <input id="ctl" name="ctl" size="16" type="text" value="{{$result.ctl}}" >
+                        <span class="add-on">act</span>
+                        <input id="act" name="act" size="16" type="text" value="{{$result.act}}">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="type">选择类型</label>
+                    <div class="controls">
+                      {{html_options name=type selected=$result.type options=$typeAry}}
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="parentid">选择所属主菜单</label>
+                    <div class="controls">
+                      {{html_options name=parentid selected=$result.parentid options=$mainMenuAry}}
+                    </div>
+                  </div>
+                  <div class="control-group">
+                    <label class="control-label" for="order">排序</label>
+                    <div class="controls">
+                      <input class="input-xlarge" name="order" id="order" type="text" value="{{$result.order}}">
+                    </div>
+                  </div>
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">提交</button>
+                  </div>
+                </form>
+            
+            </div>
+          </div>
+
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+      {{include file='Loganalysis/footer.phtml'}}
+
+    </div><!--/.fluid-container-->
+
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+{{include file='Loganalysis/header.phtml'}}
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">客户端日志</a>
+          <div class="nav-collapse">
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+          <div class="well sidebar-nav">
+             {{include file='Loganalysis/left_menu.phtml'}}
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span10">
+          <div>
+            {{include file='Loganalysis/path_menu.phtml'}}
+          </div>
+
+          <div class="row-fluid">
+            <form action="" name="logerror" method="GET">
+              <div class="controls controls-row">
+                <input type="text" value="{{$params.mobile}}" name="mobile" class="span2" rel="tooltip" title="手机" id="mobile" />
+                <button type="submit" class="btn span1">查看</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="row-fluid">    
+            <div class="box span12" style="">
+              <div class="box-content" style="display: block;">
+                <div class="span12">
+                    Showing {{$start}} to {{$end}} of <span style="color:red;font-weight:bold;">{{$count}}</span> entries
+                </div>
+                <div class="span12 center">
+                  {{$pagenav}}
+                </div>
+                <div>
+                    <table class="table table-bordered" >
+                    <tbody>
+                      {{section name=r loop=$result}}
+                      <tr class="odd">
+                        <td class="">
+                          <fieldset>    
+                            <legend>Detail Information</legend>      
+                            <ul>
+                              <li>filepath: {{$result[r].filepath}}</li>
+                              <li>filesize: {{$result[r].filesize}}</li>
+                              <li>uuid: {{$result[r].uuid}}</li>
+                              <li>uploadtime: {{$result[r].uploadtime}}</li>
+                              <li>uploadip: {{$result[r].uploadip}}</li>
+                              <li>pcode: {{$result[r].pcode}}</li>
+                              <li>version: {{$result[r].version}}</li>
+                              <li>mobile: {{$result[r].mobile}}</li>
+                              <li>feedback: {{$result[r].feedback}}</li>
+                              <li><a href="/mob/errorfile/view/menuid/21?id={{$result[r].id}}" target="">查看</a></li>
+                            </ul>
+                          </fieldset>
+                        </td>
+                      </tr>
+                      {{/section}}
+                    </tbody>
+                  </table>
+                <div class="row-fluid">
+                <div class="span12">
+                  <div class="" id="">
+                    Showing {{$start}} to {{$end}} of <span style="color:red;font-weight:bold;">{{$count}}</span> entries
+                  </div>
+                </div>
+                <div class="span12 center">
+                  {{$pagenav}}
+                </div>
+                </div>
+              </div>            
+              </div>
+            </div><!--/span-->
+          </div>
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+      {{include file='Loganalysis/footer.phtml'}}
+    </div><!--/.fluid-container-->
+    <script type="text/javascript">
+      $('#filter').tooltip('show');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+{{include file='Loganalysis/header.phtml'}}
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          {{include file='Loganalysis/top_menu.phtml'}}
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span2">
+          <div class="well sidebar-nav">
+             {{include file='Loganalysis/left_menu.phtml'}}
+          </div><!--/.well -->
+        </div><!--/span-->
+        <div class="span10">
+          <div>
+            {{include file='Loganalysis/path_menu.phtml'}}
+          </div>
+
+          <div class="row-fluid">    
+            <div class="box span12" style="">
+              <div class="box-header well">
+                <h2>列表</h2>
+                <div class="box-icon">
+                  <a href="/loganalysis/menu/add" class="btn btn-setting btn-round"><i class="icon icon-plus"></i></a>
+                </div>
+              </div>
+              <div class="box-content" style="display: block;">
+                <div>
+                    <table class="table table-bordered" >
+                      <thead>
+                        <tr role="row">
+                          <th>ID</th>
+                          <th>名称</th>
+                          <th>地址</th>
+                          <th>类型</th>
+                          <th>排序</th>
+                          <th>操作</th>
+                        </tr>
+                    </thead>   
+                  
+                    <tbody>
+                      {{foreach from=$result item=row name=menu}}
+                        {{if $smarty.foreach.foo.index % 2 == 0}}
+                          <tr class="odd">
+                        {{else}}
+                          <tr class="even">
+                        {{/if}}
+                            <td class="">{{$row.id}}</td>
+                            <td class="center">{{$row.name}}</td>
+                            <td class="center ">{{$row.url}}</td>
+                            <td class="center ">{{$row.type}}</td>
+                            <td class="center ">{{$row.order}}</td>
+                            <td class="center ">
+                              <a class="btn btn-info" href="/loganalysis/menu/edit/id/{{$row.id}}">
+                                <i class="icon-edit icon-white"></i>  
+                                编辑                                           
+                              </a>
+                              <a class="btn btn-danger" href="/loganalysis/menu/del/id/{{$row.id}}">
+                                <i class="icon-trash icon-white"></i> 
+                                删除
+                              </a>
+                            </td>
+                          </tr>
+                      {{/foreach}}
+                    </tbody>
+                  </table>
+                <div class="row-fluid">
+                </div>
+              </div>            
+              </div>
+            </div><!--/span-->
+                
+          </div>
+
+        </div><!--/span-->
+      </div><!--/row-->
+
+      <hr>
+      {{include file='Loganalysis/footer.phtml'}}
+
+    </div><!--/.fluid-container-->
+
+  </body>
+</html>

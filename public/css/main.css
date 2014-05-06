@@ -1,0 +1,208 @@
+/*!
+ * 自定义css
+ */
+
+div.center,p.center,img.center{
+margin-left: auto !important;
+margin-right: auto !important;
+float:none !important;
+display: block;
+text-align:center;
+}
+/*登录界面*/
+.login-box{
+
+}
+.login-box .input-prepend{
+margin-bottom: 10px;
+}
+.login-box .btn{
+margin-top:15px;
+width:100%
+}
+
+/*日志列表*/
+fieldset {
+  border:0;
+  padding:10px;
+  margin-bottom:35px;
+  background:#EEE;
+
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+
+  background:-webkit-liner-gradient(top,#EEEEEE,#FFFFFF);
+  background:linear-gradient(top,#EFEFEF,#FFFFFF);
+
+  box-shadow:3px 3px 10px #666;
+  -moz-box-shadow:3px 3px 10px #666;
+  -webkit-box-shadow:3px 3px 10px #666;
+
+  position:relative;
+}
+
+legend {
+  width: 200px;
+  padding:5px 10px;
+  background-color:#4F709F;
+  color:#FFF;
+  line-height:20px;
+
+  border-radius:3px;
+  border-bottom-width: 0px;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+
+  box-shadow:2px 2px 4px #666;
+  -moz-box-shadow:2px 2px 4px #666;
+  -webkit-box-shadow:2px 2px 4px #666;
+
+  position:absolute;
+  left:10px;
+  top:-20px;
+}
+
+/*表格列表*/
+.box{
+border: 1px solid #DEDEDE;
+border-radius:3px;
+-webkit-border-radius:3px;
+-moz-border-radius:3px;
+margin-top: 10px; 
+margin-bottom: 10px ;
+box-shadow: 0 0 10px rgba(189, 189, 189, 0.4);
+-webkit-box-shadow: 0 0 10px rgba(189, 189, 189, 0.4);
+-moz-box-shadow: 0 0 10px rgba(189, 189, 189, 0.4);
+}
+
+.box-header{
+border:none;
+padding-top:5px;
+border-bottom: 1px solid #DEDEDE;
+border-radius:3px 3px 0 0;
+-webkit-border-radius:3px 3px 0 0;
+-moz-border-radius:3px 3px 0 0;
+height:12px;
+min-height:12px;
+margin-bottom: 0;
+cursor:move;
+font-weight:bold;
+font-size:16px;
+background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(0,0,0,0.1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(0,0,0,0.1)));
+background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.1) 100%);
+background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.1) 100%);
+background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.1) 100%);
+background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(0,0,0,0.1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#1a000000',GradientType=0 );
+
+}
+
+.box-header h2{
+font-size:15px;
+width:auto;
+clear:none;
+float:left;
+line-height:25px;
+white-space: nowrap;
+}
+.box-header h3{
+font-size:13px;
+width:auto;
+clear:none;
+float:left;
+line-height:25px;
+white-space: nowrap;
+}
+.box-header h2 > i{
+margin-top:1px;
+}
+.box-icon{
+float:right;
+}
+.box-icon a{
+clear:none;
+float:left;
+margin:0 2px;
+height: 18px;
+width:5px;
+margin-top: -1px;
+}
+.box-icon a i{
+margin-left:-4.5px;
+}
+.box-content{
+padding:10px;
+}
+div.dataTables_length select {
+width: 50px;
+}
+.dataTables_filter input, .dataTables_length select {
+display: inline-block;
+margin-bottom: 0;
+}
+
+.pagin {
+  padding: 2px 0;
+  margin: 0;
+  font-family: "Verdana", sans-serif;
+  font-size: 7pt;
+  font-weight: bold;
+}
+.pagin * {
+  padding: 2px 6px;
+  margin: 0;
+}
+.pagin a {
+  border: solid 1px #666666;
+  background-color: #EFEFEF;
+  color: #666666;
+  text-decoration: none;
+}
+.pagin a:visited {
+  border: solid 1px #666666;
+  background-color: #EFEFEF;
+  color: #60606F;
+  text-decoration: none;
+}
+.pagin a:hover, .pagin a:active {
+  border: solid 1px #CC0000;
+  background-color: white;
+  color: #CC0000;
+  text-decoration: none;
+}
+.pagin span {
+  cursor: default;
+  border: solid 1px #808080;
+  background-color: #F0F0F0;
+  color: #B0B0B0;
+}
+.pagin span.current {
+  border: solid 1px #666666;
+  background-color: #666666;
+  color: white;
+}
+
+/*弹窗*/
+.modal_my{
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  z-index: 1050;
+  width: 1200px;
+  margin-left: -600px;
+  background-color: #ffffff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  outline: none;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+}

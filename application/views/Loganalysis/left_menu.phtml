@@ -1,0 +1,14 @@
+            <ul class="nav nav-list">
+                {{foreach from=$menu.leftMenu item=menu}}
+                {{if $menu.type == '0'}}
+                    <li class="nav-header">{{$menu.name}}</li>
+                {{else if $menu.type == '1'}}
+                    {{if $menu.active == '1'}}
+                        <li class="active"><a href="{{$menu.url}}/menuid/{{$menu.id}}">{{$menu.name}}</a></li>
+                    {{else}}
+                        <li><a href="{{$menu.url}}/menuid/{{$menu.id}}">{{$menu.name}}</a></li>
+                    {{/if}}
+                {{/if}}
+
+                {{/foreach}}
+            </ul>

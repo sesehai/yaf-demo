@@ -1,0 +1,25 @@
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">移动端日志分析</a>
+          <div class="nav-collapse">
+            {{foreach from=$topMenu item=menu}}
+                {{if $menu.active == '1'}}
+                  <ul class="nav">
+                    <li class="active"><a href="{{$menu.url}}/menuid/{{$menu.id}}">{{$menu.name}}</a></li>
+                  </ul>
+                {{else}}
+                    <ul class="nav">
+                      <li ><a href="{{$menu.url}}/menuid/{{$menu.id}}">{{$menu.name}}</a></li>
+                    </ul>
+                {{/if}}
+            {{/foreach}}
+
+            {{if $userInfo.realname neq ''}}
+              <p class="navbar-text pull-right">当前用户：{{$userInfo.realname}} | <a href="/Loganalysis/user/logout">退出</a></p>
+            {{else}}
+              <p class="navbar-text pull-right"><a href="#"></a></p>
+            {{/if}}
+          </div><!--/.nav-collapse -->
